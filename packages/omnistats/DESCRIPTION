@@ -1,0 +1,31 @@
+Package: omnistats
+Type: Package
+Title: Statistical Utilities for the OmniR Monorepo
+Version: 0.2.0
+Authors@R: person("Wyatt", "Au", , "wyatt_au@protonmail.com", role = c("aut", "cre"))
+Description: Statistical helper functions for the OmniR monorepo,
+    with a focus on numerically robust building blocks for time-series
+    analysis and financial backtesting. Depends on the companion package
+    'omnicore' to demonstrate how packages inside the monorepo depend on
+    one another.
+License: Apache License (>= 2.0)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports:
+    checkmate,
+    data.table,
+    stats,
+    omnicore,
+    xts
+Suggests:
+    knitr,
+    rmarkdown,
+    Rmpfr,
+    testthat (>= 3.0.0),
+    withr,
+    zoo
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+URL: https://github.com/WyattAu/OmniR-template
+BugReports: https://github.com/WyattAu/OmniR-template/issues
+Config/roxygen2/version: 8.1.0

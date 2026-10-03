@@ -1,0 +1,22 @@
+{
+  "name": "OmniR",
+  "image": "ghcr.io/rocker-org/devcontainer/r-ver:latest",
+  "features": {
+    "ghcr.io/rocker-org/devcontainer-features/renv:1": {},
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+      "packages": "libuv1-dev,libhunspell-dev,libmpfr-dev,pandoc"
+    }
+  },
+  "postCreateCommand": "Rscript -e 'renv::restore(prompt = FALSE)'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "REditorSupport.r",
+        "REditorSupport.r-renv",
+        "EditorConfig.EditorConfig",
+        "REditorSupport.vscode-R-debugger",
+        "github.vscode-github-actions"
+      ]
+    }
+  }
+}
