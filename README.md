@@ -1,6 +1,7 @@
 # OmniR
 
 [![CI](https://github.com/WyattAu/OmniR-template/actions/workflows/ci.yml/badge.svg)](https://github.com/WyattAu/OmniR-template/actions/workflows/ci.yml)
+[![coverage](https://img.shields.io/endpoint?url=https://wyattau.github.io/OmniR-template/coverage.json)](https://wyattau.github.io/OmniR-template/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 An R **monorepo** template: multiple R packages live in one repository, sharing a single
@@ -84,6 +85,23 @@ Each package doubles as a worked example of a best-practice R package:
 roxygen documentation with runnable examples, error-path tests, input
 validation, S3 methods, and registered native code. See
 [ARCHITECTURE.md](ARCHITECTURE.md) for the design rationale.
+
+## Nix
+
+A dev-shell flake provides R plus every system library the lockfile
+needs (pandoc, libuv, hunspell, mpfr, curl, openssl, libxml2, zlib) —
+nix owns the system side, renv owns R packages. Inside `nix develop`,
+everything links nix store paths via RPATH, so no `LD_LIBRARY_PATH` or
+Posit-binary workarounds are needed:
+
+```sh
+nix develop -c Rscript scripts/build-all.R
+```
+
+The first `renv::restore()` inside the flake may rebuild a few packages
+that were previously linked against non-nix libraries; the renv cache
+makes that cheap. A CachyOS/Arch machine *without* the flake follows
+the Troubleshooting section instead.
 
 ## Prerequisites
 

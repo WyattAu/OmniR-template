@@ -36,6 +36,12 @@ jobs:
       fail-fast: false
       matrix:
         r-version: ["release", "oldrel-1"]
+        include:
+          # Early-warning leg: surfaces upcoming R breakage. Experimental
+          # (allowed to fail) and NOT a required branch-protection check.
+          - r-version: "devel"
+            experimental: true
+    continue-on-error: ${{ matrix.experimental == true }}
     steps:
       - uses: actions/checkout@v7
 
