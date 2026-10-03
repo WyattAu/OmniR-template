@@ -83,7 +83,7 @@ cards <- vapply(names(titles), function(pkg) {
 landing <- c(
   "<!DOCTYPE html>",
   '<html lang="en"><head><meta charset="utf-8">',
-  "<title>OmniR-template documentation</title>",
+  "<title>OmniR documentation</title>",
   "<style>",
   "  body { font-family: system-ui, sans-serif; max-width: 46rem; margin: 3rem auto; padding: 0 1rem; }",
   "  .card { display: block; border: 1px solid #d0d7de; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; text-decoration: none; color: inherit; }",
@@ -91,8 +91,8 @@ landing <- c(
   "  .card h2 { margin: 0 0 0.25rem; color: #0969da; }",
   "  .card p { margin: 0; color: #57606a; }",
   "</style></head><body>",
-  "<h1>OmniR-template</h1>",
-  "<p>Reference documentation for the packages in this monorepo.</p>",
+  "<h1>OmniR</h1>",
+  "<p>Reference documentation for the packages in the OmniR monorepo.</p>",
   coverage_note,
   cards,
   "</body></html>"
