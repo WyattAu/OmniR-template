@@ -135,6 +135,16 @@ project. The per-package `.Rprofile` files source the root
 `renv/activate.R`, so opening a package subdirectory anywhere still
 activates the monorepo library.
 
+## Template family
+
+This repository is the general upstream of a template family:
+[OmniR-template](https://github.com/WyattAu/OmniR-template) spawned
+[uofg_r_mono](https://github.com/WyattAu/uofg_r_mono), a downstream
+research deployment sharing the same infrastructure (scripts, CI
+workflows, lint/format configs, Makefile). Infrastructure changes
+belong here first; `scripts/template-sync-check.sh` reports divergence
+against the downstream so the two can be kept in step.
+
 ## Decision log
 
 | Decision | Rationale |
