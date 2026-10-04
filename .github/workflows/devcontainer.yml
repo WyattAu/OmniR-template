@@ -20,6 +20,6 @@ jobs:
       - uses: actions/checkout@v7
 
       - name: Build and run devcontainer
-        uses: devcontainers/ci@v1
+        uses: devcontainers/ci@v0.3
         with:
           runCmd: Rscript -e 'cat(R.version.string, "| renv", as.character(packageVersion("renv")), "\n")'
