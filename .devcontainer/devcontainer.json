@@ -1,6 +1,6 @@
 {
   "name": "OmniR",
-  "image": "ghcr.io/rocker-org/devcontainer/r-ver:latest",
+  "image": "ghcr.io/rocker-org/devcontainer/r-ver:4.6",
   "features": {
     "ghcr.io/rocker-org/devcontainer-features/renv:1": {},
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
